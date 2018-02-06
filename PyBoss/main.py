@@ -40,10 +40,13 @@ with open(csvpath, newline= "") as csv_infile:
         dob.append(new_dob)
 
         ssn_stars = row[3].split("-")
-        new_ssn = "***-***" + ssn_stars[2]
+        new_ssn = "***-***-" + ssn_stars[2]
         ssn.append(new_ssn)
+    
+        state.append(state_abbrev[row[4]])
 
-        state.append(state_abbrev)
+        
+
 
 employees = zip(empid, first_name, last_name, dob, ssn, state)
 new_csvpath = os.path.join('raw_data', 'mainpy.csv')
