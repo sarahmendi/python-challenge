@@ -19,13 +19,15 @@ print("-----------------------------------")
 print("Total Votes: " + str(row_count))
 print("-----------------------------------")
 for item in candidate_count:
-    print(item + ": " +  str(((candidate_count[item]/row_count)*100)) + "% (" + str(candidate_count[item]) + ")")
+    print(item + ": " +  str((candidate_count[item]/row_count)*100) + "% (" + str(candidate_count[item]) + ")")
 print("-----------------------------------")
 print("Winner: " + max(candidate_count))
 print("-----------------------------------")
 
-
-
+text_filepath = os.path.join('raw_data', 'mainpy.txt')
+print()
+with open(text_filepath,'r') as file:
+    print(file.read())
 
 
         
